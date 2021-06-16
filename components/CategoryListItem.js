@@ -5,24 +5,20 @@ import {
     Text,
     StyleSheet,
     TouchableOpacity,
-    Alert
 } from 'react-native'
+import 'react-native-gesture-handler';
 
 // import Whale from '../assets/whale.png';
 
-function ClickItem(){
-    Alert.alert('an item was clicked !');
-}
-
 export default function CategoryListItem(props) {
-    const { category } = props;
+    const { category, onPress } = props;
     return (
         <TouchableOpacity
             activeOpacity={0.5}
-            onPress={ClickItem} >
+            onPress={onPress}
+        >
             <View style={styles.container1}>
                 <Text style={styles.title} >{category.name} </Text>
-                {/* <Image style={styles.categoryImage} source={Whale} /> */}
                 <Image style={styles.categoryImage} source={category.image} />
             </View>
         </TouchableOpacity>
