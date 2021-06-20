@@ -1,9 +1,11 @@
 import React from 'react';
+import axios from 'axios';
 import { StyleSheet, FlatList } from 'react-native';
 import CategoryListItem from '../components/CategoryListItem';
 
 import StopWatch from '../assets/stopwatch.png';
 import Whale from '../assets/whale.png';
+import Whale2 from '../assets/whale2.png';
 
 export default class Categories extends React.Component {
     static navigationOptions = {
@@ -17,10 +19,22 @@ export default class Categories extends React.Component {
             categories: [
                 { id: 1, name: 'Đồng hồ', image: StopWatch },
                 { id: 2, name: 'Cá Voi', image: Whale },
-                // { id: 3, name: 'Item 3', image: StopWatch },
+                { id: 3, name: 'Cá Voi Xanh', image: Whale2 },
             ]
         };
     }
+
+    // componentDidMount() {
+    //     axios.get('http://localhost:3000/categories')
+    //     .then(res => {
+    //         this.setState({
+    //             categories: res.data
+    //         })
+    //     })
+    //     .catch(error => {
+    //         console.error(error);
+    //     })
+    // }
 
     render() {
         const { navigation } = this.props;
